@@ -1,7 +1,7 @@
 import { testCollector } from "../common/testCollector";
 
 /**
- * Declare a bunch of code that will be executed **after** tests beging
+ * Declare a bunch of code that will be executed **after** tests begins
  *
  * More than one declaration of this code results in a list
  * of functions to run.
@@ -21,6 +21,6 @@ import { testCollector } from "../common/testCollector";
  */
 export function afterAll(fn: () => void) {
   if (fn) {
-    testCollector.afterAllFunctions.push(fn);
+    testCollector.afterAllFunctions.enqueue(fn);
   }
 }

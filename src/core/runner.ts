@@ -1,4 +1,4 @@
-import { runtime } from "../common";
+import { runtime, testCollector } from "../common";
 import { Group, Test, testFunctionType } from "../types";
 import { TestReport } from "../api/interfaces";
 
@@ -13,7 +13,9 @@ export async function executeTestCases(groups: Group[]) {
 async function runTests(testsFunctions: testFunctionType[]) {
   const reports: TestReport[] = [];
   for (const test of testsFunctions) {
+    await testCollector.beforeEachFunctions.executeAsync();
     const report = await runtime.injectBot(test);
+    await testCollector.afterEachFunctions.executeAsync();
     reports.push(report);
   }
   return reports;

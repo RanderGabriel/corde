@@ -1,9 +1,9 @@
 {
   "name": "corde",
-  "version": "2.0.0-beta.4",
+  "version": "2.0.0-beta-15",
   "description": "A simple library for Discord bot tests",
-  "main": "./src/index.js",
-  "types": "./src/index.d.ts",
+  "main": "./index.js",
+  "types": "./index.d.ts",
   "directories": {
     "lib": "bin"
   },
@@ -49,6 +49,7 @@
     "@types/node": "^14.0.22",
     "@types/require-from-string": "^1.2.0",
     "@types/rewire": "^2.5.28",
+    "@types/uuid": "^8.3.0",
     "@types/ws": "^7.2.4",
     "babel-jest": "^26.0.1",
     "cli-spinners": "^2.4.0",
@@ -79,7 +80,8 @@
     "figlet": "^1.2.4",
     "ora": "^5.0.0",
     "path": "^0.12.7",
-    "rxjs": "^6.5.5"
+    "rxjs": "^6.5.5",
+    "uuid": "^8.3.1"
   },
   "engines": {
     "node": ">=12.0.0"
@@ -100,6 +102,8 @@
   "homepage": "https://github.com/lucasgmagalhaes/corde#readme",
   "files": [
     "lib/**",
-    "bin/"
+    "bin/",
+    "index.js",
+    "index.d.ts"
   ]
 }

@@ -1,4 +1,4 @@
-import { group, test, command, beforeStart, afterAll } from "corde";
+import { beforeStart, group, afterAll, expect, test } from "corde";
 import { client, loginBot } from "../";
 
 beforeStart(() => {
@@ -7,7 +7,12 @@ beforeStart(() => {
 
 group("main commands", () => {
   test("Hello command should return... hello!!", () => {
-    expect("ping").shouldReturn("Ping?");
+    expect("ping").toReturn("Pong?");
+  });
+
+  test("should remove a role", () => {
+    const roleName = "test-role";
+    expect(`remove-role ${roleName}`).toDeleteRole({ name: roleName });
   });
 });
 

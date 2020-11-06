@@ -234,8 +234,23 @@ export class CordeBot extends Events {
     return null;
   }
 
+  public async findPinnedMessage(messageData: MessageData) {
+    const msgs = await this.textChannel.messages.fetchPinned();
+    if (messageData && messageData.text) {
+      return msgs.find((m) => m.content === messageData.text);
+    }
+    if (messageData && messageData.id) {
+      return msgs.find((m) => m.id === messageData.id);
+    }
+    return null;
+  }
+
   public async fetchRole(id: string) {
-    return await this.guild.roles.fetch(id);
+    return await this.guild.roles.fetch(id, false, true);
+  }
+
+  public async hasRole(roleData: RoleData) {
+    return !!(await this.findRole(roleData));
   }
 
   public async findRole(roleData: RoleData) {
@@ -258,11 +273,6 @@ export class CordeBot extends Events {
   private async _findMessage(
     fn: (value: Message, key: string, collection: Collection<string, Message>) => boolean,
   ) {
-    const data = this.textChannel.messages.cache.find(fn);
-    if (data) {
-      return data;
-    }
-
     const collection = await this.textChannel.messages.fetch();
     if (collection) {
       return collection.find(fn);

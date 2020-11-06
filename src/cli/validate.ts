@@ -11,7 +11,7 @@ import { FileError, PropertyError } from "../errors";
  *
  * @version 1.0
  *
- * @param configs Config paramater that will be validated
+ * @param configs Config parameter that will be validated
  *
  * @throws Error if any config is invalid.
  */
@@ -50,13 +50,14 @@ function validatePaths(pathsDir: string[], errors: string[]) {
   }
 
   for (const pathDir of pathsDir) {
-    if (fs.existsSync(pathDir)) {
-      const stats = fs.lstatSync(pathDir);
+    const pathResolved = path.resolve(process.cwd(), pathDir);
+    if (fs.existsSync(pathResolved)) {
+      const stats = fs.lstatSync(pathResolved);
       if (stats.isDirectory()) {
-        const files = fs.readdirSync(pathDir);
+        const files = fs.readdirSync(pathResolved);
         const filesResolve = [];
         for (const file of files) {
-          filesResolve.push(path.resolve(pathDir, file));
+          filesResolve.push(path.resolve(pathResolved, file));
         }
 
         validatePaths(filesResolve, errors);
