@@ -9,6 +9,7 @@
     "swizzle": "docusaurus swizzle",
     "deploy": "bash ./tasks/deploy.sh",
     "newVersion": "docusaurus docs:version",
+    "write-translations": "docusaurus write-translations",
     "serve": "docusaurus serve"
   },
   "dependencies": {

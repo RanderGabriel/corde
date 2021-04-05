@@ -19,9 +19,7 @@ npm install --save-dev corde
 
 Note: Corde documentation uses `yarn` commands, but `npm` will also work. You can compare `yarn` and `npm` commands in the [yarn docs, here](https://yarnpkg.com/en/docs/migrating-from-npm#toc-cli-commands-comparison).
 
-:::info
-This example uses [Discord.js](https://discord.js.org/#/) in the bot showcase.
-:::
+:::info This example uses [Discord.js](https://discord.js.org/#/) in the bot showcase. :::
 
 Let's get started writing a simple test for a bot that sends just send a simple message.
 
@@ -31,8 +29,7 @@ First, we need the `corde` config file. The fastest way to do that is by calling
 yarn corde --init
 ```
 
-This command will create the `corde.config.json` file at the root of your project. For more details about the `init` command
-check the CLI documentation here.
+This command will create the `corde.config.json` file at the root of your project. For more details about the `init` command check the CLI documentation here.
 
 This file will have the following structure:
 
@@ -48,8 +45,7 @@ This file will have the following structure:
 }
 ```
 
-With the config file created, we need to put the necessary data to getting started with tests.
-Check configurations for details about each option.
+With the config file created, we need to put the necessary data to getting started with tests. Check configurations for details about each option.
 
 Okay, after having the options set, Let's create the first test.
 
@@ -71,8 +67,7 @@ exports.client = client;
 exports.loginBot = loginBot;
 ```
 
-Then let's create a `test` folder in the root of your application and then a file called for example: `bot.test.js`.
-By doing this, we have the following structure of files
+Then let's create a `test` folder in the root of your application and then a file called for example: `bot.test.js`. By doing this, we have the following structure of files
 
 ```
 .
@@ -85,8 +80,7 @@ By doing this, we have the following structure of files
 
 This bot has just a simple task: Send a fixed message when the users send **hello**.
 
-So, we need to create a test to ensure that the bot will always send the fixed message (**Hello!!**) when
-the user call **!hello** (`!` is the prefix for the bot. Always use a prefix for your bot).
+So, we need to create a test to ensure that the bot will always send the fixed message (**Hello!!**) when the user call **!hello** (`!` is the prefix for the bot. Always use a prefix for your bot).
 
 Let's implement the `bot.test.js`:
 
@@ -111,23 +105,17 @@ afterAll(() => {
 });
 ```
 
-:::info
-Corde does not have a global function. We pretend to create them in the future.
-:::
+:::info Corde does not have a global function. We pretend to create them in the future. :::
 
 So, what we got here?
 
-The first thing that we do is call the `beforeStart` function. This function is mainly used to
-init our bot connection (remember the `loginBot()`?).
+The first thing that we do is call the `beforeStart` function. This function is mainly used to init our bot connection (remember the `loginBot()`?).
 
-Then we can declare the `group` function. Be clear that `group` and `test` functions are optional.
-You can use just the `expect` function. That is what makes the magic happens. (uh)
+Then we can declare the `group` function. Be clear that `group` and `test` functions are optional. You can use just the `expect` function. That is what makes the magic happens. (uh)
 
-`expect` wait for the _command name_. Pay attention that we do not put the bot prefix. Corde already does it
-for us. If we put it, we will see Corde sending `!!hello` to Discord (we do not want this).
+`expect` wait for the _command name_. Pay attention that we do not put the bot prefix. Corde already does it for us. If we put it, we will see Corde sending `!!hello` to Discord (we do not want this).
 
-After that, we call `toReturn` with the parameter `Hello!!`. So, we are telling Corde that we expect that after sending `!hello`,
-our bot should send `Hello!!`. And that is it.
+After that, we call `toReturn` with the parameter `Hello!!`. So, we are telling Corde that we expect that after sending `!hello`, our bot should send `Hello!!`. And that is it.
 
 To execute this test, we just need to call:
 

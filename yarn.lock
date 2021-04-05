@@ -947,6 +947,13 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
+"@crowdin/cli@^3.5.5":
+  version "3.5.5"
+  resolved "https://registry.yarnpkg.com/@crowdin/cli/-/cli-3.5.5.tgz#aca56310d72db8b10dc21323cb60c96c094b4361"
+  integrity sha512-5B5RWNzWC10GakRjEeLYKiEMs+26zcc9dZygI6oyJVzGHl0yXcilgctiRqc7ZA+mYZnyC1gfFzFxQqW5iGtE1w==
+  dependencies:
+    shelljs "^0.8.4"
+
 "@discordjs/collection@^0.1.6":
   version "0.1.6"
   resolved "https://registry.yarnpkg.com/@discordjs/collection/-/collection-0.1.6.tgz#9e9a7637f4e4e0688fd8b2b5c63133c91607682c"

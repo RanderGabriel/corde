@@ -11,6 +11,18 @@ module.exports = {
   favicon: "img/logo/favicon.ico",
   organizationName: "lucasgmagalhaes",
   projectName: "corde",
+  i18n: {
+    defaultLocale: "en",
+    locales: ["en", "pt-BR"],
+    localeConfigs: {
+      en: {
+        label: "English",
+      },
+      "pt-BR": {
+        label: "Português",
+      },
+    },
+  },
   themeConfig: {
     navbar: {
       title: "Corde",
@@ -42,6 +54,10 @@ module.exports = {
               label: "All versions",
             },
           ],
+        },
+        {
+          type: "localeDropdown",
+          position: "right",
         },
         {
           href: "https://github.com/lucasgmagalhaes/corde",

@@ -1,0 +1,22 @@
+{
+  "version.label": {
+    "message": "3.x",
+    "description": "The label for version current"
+  },
+  "sidebar.docs.category.Introduction": {
+    "message": "Introduction",
+    "description": "The label for category Introduction in sidebar docs"
+  },
+  "sidebar.docs.category.Guides": {
+    "message": "Guides",
+    "description": "The label for category Guides in sidebar docs"
+  },
+  "sidebar.docs.category.API Reference": {
+    "message": "API Reference",
+    "description": "The label for category API Reference in sidebar docs"
+  },
+  "sidebar.structures.category.Structures": {
+    "message": "Structures",
+    "description": "The label for category Structures in sidebar structures"
+  }
+}

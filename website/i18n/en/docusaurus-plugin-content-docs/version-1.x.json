@@ -1,0 +1,14 @@
+{
+  "version.label": {
+    "message": "1.x",
+    "description": "The label for version 1.x"
+  },
+  "sidebar.sidebar.category.Introduction": {
+    "message": "Introduction",
+    "description": "The label for category Introduction in sidebar sidebar"
+  },
+  "sidebar.sidebar.category.API Reference": {
+    "message": "API Reference",
+    "description": "The label for category API Reference in sidebar sidebar"
+  }
+}

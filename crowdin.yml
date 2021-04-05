@@ -1,0 +1,20 @@
+project_id: "412166"
+api_token: "daecc33e7892fbcb442d95619566187a5b3b8834bd194db607c238da666edaf57165db9af4e9d64e"
+preserve_hierarchy: true
+files: [
+    # JSON translation files
+    {
+      source: "/website/i18n/en/**/*",
+      translation: "/i18n/%two_letters_code%/**/%original_file_name%",
+    },
+    # Docs Markdown files
+    {
+      source: "/docs/**/*",
+      translation: "/i18n/%two_letters_code%/docusaurus-plugin-content-docs/current/**/%original_file_name%",
+    },
+    # Blog Markdown files
+    {
+      source: "/website/blog/**/*",
+      translation: "/i18n/%two_letters_code%/docusaurus-plugin-content-blog/**/%original_file_name%",
+    },
+  ]
