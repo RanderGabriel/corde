@@ -37,7 +37,6 @@ jobs:
        uses: actions/setup-node@v2
        with:
          node-version: ${{ matrix.node-version }}
-     - run: npm init
-     - run: npm i corde
-     - run: npm run corde -v
+     - run: npm i -g corde
+     - run: corde -v
    
