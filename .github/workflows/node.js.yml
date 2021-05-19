@@ -6,7 +6,7 @@ name: Node.js CI
 on: [push, pull_request, workflow_dispatch]
 
 jobs:
-  executable-check:
+  unix-init-check:
     strategy:
       matrix:
         os: ["ubuntu-latest", "windows-latest", "macos-latest"]
@@ -20,23 +20,7 @@ jobs:
        uses: actions/setup-node@v2
        with:
          node-version: ${{ matrix.node-version }}
-     - run: npm install
-     - run: npm run gulp
-     - run: npm run corde -v
-   
-  unix-init-check:
-    strategy:
-      matrix:
-        os: ["ubuntu-latest", "windows-latest", "macos-latest"]
-        node-version: [12.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
-    runs-on: ${{ matrix.os }}
-    steps:
-     - name: Use Node.js ${{ matrix.node-version }}
-       uses: actions/setup-node@v2
-       with:
-         node-version: ${{ matrix.node-version }}
-     - run: npm i -g corde
-     - run: corde -v
+     - run: cd example
+     - run: yarn
+     - run: yarn corde -v
    
