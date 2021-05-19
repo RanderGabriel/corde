@@ -9,7 +9,7 @@ jobs:
   unix-init-check:
     strategy:
       matrix:
-        os: ["ubuntu-latest", "windows-latest", "macos-latest"]
+        os: ["macos-latest"]
         node-version: [12.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
